@@ -6,15 +6,26 @@
     <title>Lab_3_Local_Storage</title>
     <script>
         function guardarTarea(){
-            const infNombreTarea      = document.getElementById("nombreTarea").value ;
+            const infNombreTarea    = document.getElementById("nombreTarea").value ;
             const infFechaTarea     = document.getElementById("fechaTarea").value ;
-            const infHoraTarea   = document.getElementById("horaTarea").value ;
-            const infDescripcion   = document.getElementById("descripcion").value ;
+            const infHoraTarea      = document.getElementById("horaTarea").value ;
+            const infDescripcion    = document.getElementById("descripcion").value ;
 
             localStorage.setItem(infNombreTarea, infNombreTarea)
             localStorage.setItem("f"+infNombreTarea, infFechaTarea)
             localStorage.setItem("h"+infNombreTarea, infHoraTarea)
             localStorage.setItem("d"+infNombreTarea, infDescripcion)
+        }
+
+        function consultarTarea(){
+            const infNombreTarea = document.getElementById("nombreTarea").value;
+            const infFechaTarea=localStorage.getItem("f"+infNombreTarea);
+            const infHoraTarea=localStorage.getItem("h"+infNombreTarea);
+            const infDescripcion=localStorage.getItem("d"+infNombreTarea);
+
+            document.getElementById("fechaTarea").value=infFechaTarea;
+            document.getElementById("horaTarea").value=infHoraTarea;
+            document.getElementById("descripcion").value=infDescripcion;
         }
 
         </script>
