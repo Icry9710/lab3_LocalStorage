@@ -28,6 +28,18 @@
             document.getElementById("descripcion").value=infDescripcion;
         }
 
+        function actualizarTarea(){
+            const infNombreTarea    = document.getElementById("nombreTarea").value;
+            const infFechaTarea     = document.getElementById("fechaTarea").value ;
+            const infHoraTarea      = document.getElementById("horaTarea").value ;
+            const infDescripcion    = document.getElementById("descripcion").value ;
+
+            localStorage.setItem(infNombreTarea, infNombreTarea)
+            localStorage.setItem("f"+infNombreTarea, infFechaTarea)
+            localStorage.setItem("h"+infNombreTarea, infHoraTarea)
+            localStorage.setItem("d"+infNombreTarea, infDescripcion)
+        }
+
         </script>
 </head>
 <body>
