@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab_3_Local_Storage</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Pacifico&display=swap" rel="stylesheet">
+
     <script>
         function guardarTarea(){
             const infNombreTarea    = document.getElementById("nombreTarea").value ;
@@ -40,13 +47,22 @@
             localStorage.setItem("d"+infNombreTarea, infDescripcion)
         }
 
+        function eliminarTarea() {
+            const infNombreTarea = document.getElementById("nombreTarea").value;
+
+            localStorage.removeItem(infNombreTarea);
+            localStorage.removeItem("f"+infNombreTarea);
+            localStorage.removeItem("h"+infNombreTarea);
+            localStorage.removeItem("d"+infNombreTarea);
+        }
+
         </script>
 </head>
 <body>
     <section id="formulario">
 
         <hr>
-        <h1>LISTA DE TAREAS</h1>
+        <h1>Lista de tareas</h1>
         <form onsubmit="guardarTarea(); return false;">
             <label for="nombreTarea">Nombre de Tarea</label>
             <input type="text" id="nombreTarea" name="nombreTarea">
